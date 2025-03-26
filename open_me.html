@@ -1,0 +1,111 @@
+""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Oli!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Monotype+Corsiva&display=swap');
+        body {
+            background: url('https://i.pinimg.com/736x/ff/df/a4/ffdfa4e4981626865d139d37d0f74e42.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            font-family: "Monotype Corsiva", cursive;
+        }
+        .wrapper {
+            text-align: center;
+            position: relative;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 24px;
+            background-color: #ff6b81;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            font-family: "Monotype Corsiva", cursive;
+        }
+        .button:hover {
+            background-color: #ff4757;
+        }
+        .message {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: none;
+            max-width: 500px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.6;
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: float 5s linear infinite;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <button class="button" onclick="showMessage()">Click me to open 🎁</button>
+        <div class="message" id="message">
+            <h2>Happy 23rd Birthday, My Oli! 🥰🎉</h2>
+            <p>my only wish for you is to always stay safe, strong, and as incredible as you are! <br>
+            you shine so brightly, and you know how much i love seeing that beautiful smile of yours.</p>
+            <p>i bet this is the most unexpected greeting you’ve received today! <br>
+            i've already done paper art, polaroids, and flowers, so i thought… <br>
+            why not an html surprise this time? 😆</p>
+            <p>i have no idea how your day will unfold, but whatever happens, just let me know— i’ll see what i can do to make it even better! <br>
+            another year for you to conquer, and i know you'll achieve even greater things than last year.</p>
+            <p>thank you for being you. lunox and i love you so much! rawr~ 🦁💖</p>
+            <h2>Happy Birthday, Babuuu! ૮ ˶ᵔ ᵕ ᵔ˶ ა</h2>
+            <p>xoxo, <br>
+            your oli & lulu ꪆৎ</p>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.querySelector(".button").style.display = "none";
+            document.getElementById("message").style.display = "block";
+            createHearts();
+        }
+
+        function createHearts() {
+            for (let i = 0; i < 20; i++) {
+                let heart = document.createElement("div");
+                heart.innerHTML = "❤️";
+                heart.classList.add("heart");
+                document.body.appendChild(heart);
+                
+                let randomX = Math.random() * window.innerWidth;
+                let randomDuration = Math.random() * 3 + 2;
+                
+                heart.style.left = `${randomX}px`;
+                heart.style.animationDuration = `${randomDuration}s`;
+                
+                setTimeout(() => heart.remove(), randomDuration * 1000);
+            }
+        }
+    </script>
+</body>
+</html>""
